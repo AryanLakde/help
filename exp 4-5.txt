@@ -1,0 +1,16 @@
+pipeline {
+ agent any
+ stages {
+ stage('Clone repository') {
+ steps {
+ git'https://github.com/AryanLakde/dev1.git'
+ }
+ }
+
+ stage('Deploy to XAMPP') {
+ steps {
+bat'xcopy /E /Y C:\\Users\\aryan\\Desktop\\exp1 C:\\xampp\\htdocs'
+ }
+ }
+ }
+}
