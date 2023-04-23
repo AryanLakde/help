@@ -1,0 +1,45 @@
+Exp 7 
+
+Step 1 : create folder hello.php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php echo"Hello world from php container"?>
+</body>
+</html>
+
+Step 2 : create dockerfile
+FROM php
+COPY ./ ./
+EXPOSE 3000
+CMD ["php","-S","0.0.0.0:3000"]
+
+Step 3 : go to  docker hub == create repo ==
+
+Step 4 : vs terminal type = docker build . -t aryan111/exp7
+
+Step 5 : docker run --name=php -p=3000:3000 aryan111/exp7
+
+Step 6 : run localhost:3000/hello.php
+
+
+
+Exp 8
+
+Step 1 : cmd =  docker pull ubuntu
+
+Step 2 : docker run -it --name mycontainer ubuntu /bin/bash
+
+step 3 : echo "Hello, world!" > myfile.txt
+
+Step 4 : exit
+
+Step 5 : docker commit mycontainer aryan111/exp7
+
+Step 6 : docker push aryan111/exp7
